@@ -279,7 +279,7 @@ row5_spacer1, row5_1, row5_spacer2, row5_2, row5_spacer3 = st.columns(
 with row5_1:
     year_chart1 = st.selectbox("Please Select year", list(
         df['Reference Year / Année de référence'].unique()), key='year_chart1', index=4)
-    st.markdown('This chart shows what corporations are emitting and in what volumes within a '+ str(max_dist) +' hour of the selected band in the selected year.')
+    st.markdown('This chart shows what corporations are emitting and in what volumes within a '+ str(round(max_dist,2)) +' hour of the selected band in the selected year.')
     st.markdown(
         'The size of bar indicates the total emissions released over the selected year by each corporation.')
     st.markdown(
@@ -304,7 +304,7 @@ row7_spacer1, row7_1, row7_spacer2, row7_2, row7_spacer3 = st.columns(
 with row7_1:
     year_chart2 = st.selectbox("Please select year", list(
         df['Reference Year / Année de référence'].unique()), key='year_chart2', index=4)
-    st.markdown('''This chart describes what types of industries are operating within a '''+ str(max_dist) +''' hour of the selected band name. 
+    st.markdown('''This chart describes what types of industries are operating within a '''+ str(round(max_dist,2)) +''' hour of the selected band name. 
 
 The size of bar indicates the total emissions released over the selected year. 
 
@@ -330,7 +330,7 @@ with row8_1:
 row9_spacer1, row9_1, row9_spacer2, row9_2, row9_spacer3 = st.columns(
     (.2, 2.3, .4, 4.4, .2))
 with row9_1:
-    st.markdown('''This chart describes changes in emissions over time within a '''+ str(max_dist) +''' hour of the selected First Nation. 
+    st.markdown('''This chart describes changes in emissions over time within a '''+ str(round(max_dist,2)) +''' hour of the selected First Nation. 
 
 The size of bar indicates the total emissions released over the selected year. 
 
@@ -358,7 +358,7 @@ with row11_1:
     df_filtered4 = chart1_data(band_chart, year_chart4)
 
 
-    st.markdown('''This map describes emitting facilities within a '''+ str(max_dist) +''' hour of the selected band. Adjacent bands within a '''+ str(max_dist) +''' hour radius are also displayed. All bands are displayed as stars. 
+    st.markdown('''This map describes emitting facilities within a '''+ str(round(max_dist,2)) +''' hour of the selected bands. All bands are displayed as stars. 
 
 The circles on the map describe facility locations. The circles are colored by the polluting/emitting corporation. 
 
